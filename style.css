@@ -1,0 +1,53 @@
+body {
+    background-color: #fce4ec; /* Un fondo rosa suave */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Georgia', serif;
+    margin: 0;
+}
+
+.carta-sobre {
+    position: relative;
+    width: 400px;
+    height: 300px;
+    cursor: pointer;
+    perspective: 1000px;
+}
+
+.sobre {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #ff9a9e; /* Color del sobre cerrado */
+    border-radius: 10px;
+    transition: transform 0.6s;
+}
+
+.carta {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #fff; /* Color del papel de la carta */
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    transform: rotateX(-90deg); /* Escondida inicialmente */
+    transform-origin: bottom;
+    transition: transform 0.6s;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.carta-sobre.abierta .sobre {
+    transform: rotateX(90deg); /* Animación para abrir el sobre */
+}
+
+.carta-sobre.abierta .carta {
+    transform: rotateX(0deg); /* Animación para mostrar la carta */
+}
+
+h1.titulo {
+    color: #e91e63;
+}
